@@ -25,7 +25,13 @@ public class QuizController {
         List<Quiz> allQuizzes = quizRepository.findByCategoryIgnoreCase(category);
         return allQuizzes.stream().limit(10).toList();  // ✅ returns only first 10
     }
-
+    // ✅ Get quizzes by category (e.g. /api/quiz/category/Java)
+//    @GetMapping("/category/{category}")
+//    public List<Quiz> getQuizByCategory(@PathVariable String category) {
+//    	return quizRepository.findByCategoryIgnoreCase(category);
+//    	
+//    	
+//    }
 
     // ✅ Add a new quiz
     @PostMapping
